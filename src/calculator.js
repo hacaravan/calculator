@@ -11,10 +11,6 @@ function calculate(sumString) {
 
   let operand = sumString.split(' ')[1];
 
-  const separateOnOperand = () => {
-    return sumString.split(operand).map(n => parseInt(n.trim()))
-  }
-
   const hasCorrectSpacing = () => {
     return sumString === sumString.trim() &&
            sumString.split(' ').length === 3 &&
@@ -29,12 +25,7 @@ function calculate(sumString) {
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   };
 
-  Object.keys(operations).forEach((operand) => {
-    if (sumString.includes(operand)) {
-      let numbers = separateOnOperand(operand);
-      returnArr = [sumString, operations[operand](numbers[0], numbers[1])]
-    };
-  });
+  let numbers = sumString.split(operand).map(n => parseInt(n.trim()))
 
-  return returnArr;
+  return [sumString, operations[operand](numbers[0], numbers[1])];
 }
