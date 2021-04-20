@@ -24,9 +24,25 @@ describe('calculate', () => {
   })
 
   describe('when given a sum with incorrect spacing', () => {
-    it('raises a syntax error', () => {
-      expect(function() {calculate('1+1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
-      expect(function() {calculate('1  + 1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+    describe('when no spaces between operands and numbers', () => {
+      it('raises a syntax error', () => {
+        expect(function() {calculate('1+1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+      })
+    })
+    describe('when two spaces between operands and numbers', () => {
+      it('raises a syntax error', () => {
+        expect(function() {calculate('1  + 1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+      })
+    })
+    describe('when space before first number', () => {
+      it('raises a syntax error', () => {
+        expect(function() {calculate(' 1 + 1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+      })
+    })
+    describe('when space after final number', () => {
+      it('raises a syntax error', () => {
+        expect(function() {calculate('1 + 1 ')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+      })
     })
   })
 })
