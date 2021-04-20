@@ -23,7 +23,7 @@ function calculate(sumString) {
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   };
 
-  if(sumString.split(' ')[1] === '~' || sumString.split(' ')[1] === 'a'){
+  if(!Object.keys(operations).includes(sumString.split(' ')[1])){
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   }
 
