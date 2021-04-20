@@ -34,6 +34,11 @@ describe('calculate', () => {
         expect(function() {calculate('1  + 1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
       })
     })
+    describe('when right number of spaces in all the wrong places', () => {
+      it('raises a syntax error', () => {
+        expect(function() {calculate('1  +1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+      })
+    })
     describe('when space before first number', () => {
       it('raises a syntax error', () => {
         expect(function() {calculate(' 1 + 1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
@@ -45,4 +50,10 @@ describe('calculate', () => {
       })
     })
   })
+
+  // describe('when given a sum with a symbol that is not supported', () => {
+  //   it('raises a syntax error', () => {
+  //     expect(function() { calculate('1 ~ 1') } ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+  //   })
+  // })
 })
