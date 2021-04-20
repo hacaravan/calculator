@@ -1,6 +1,9 @@
 'use strict'
 
 function calculate(sumString) {
+  if(sumString.trim().split(' ').length !== 3) {
+    throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
+  }
   let returnArr;
   const operations = {
     '+': (a, b) => a + b,

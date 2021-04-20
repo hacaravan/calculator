@@ -22,4 +22,11 @@ describe('calculate', () => {
       expect(calculate('6 / 3')).toEqual(['6 / 3', 2])
     })
   })
+
+  describe('when given a sum with incorrect spacing', () => {
+    it('raises a syntax error', () => {
+      expect(function() {calculate('1+1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+      expect(function() {calculate('1  + 1')} ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+    })
+  })
 })
