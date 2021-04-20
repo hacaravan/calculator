@@ -9,7 +9,9 @@ function calculate(sumString) {
     '/': (a,b) => a / b,
   }
 
-  const separateOnOperand = (operand) => {
+  let operand = sumString.split(' ')[1];
+
+  const separateOnOperand = () => {
     return sumString.split(operand).map(n => parseInt(n.trim()))
   }
 
@@ -23,7 +25,8 @@ function calculate(sumString) {
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   };
 
-  if(!Object.keys(operations).includes(sumString.split(' ')[1])){
+
+  if(!Object.keys(operations).includes(operand)){
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   }
 
