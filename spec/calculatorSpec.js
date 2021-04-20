@@ -51,9 +51,9 @@ describe('calculate', () => {
     })
   })
 
-  // describe('when given a sum with a symbol that is not supported', () => {
-  //   it('raises a syntax error', () => {
-  //     expect(function() { calculate('1 ~ 1') } ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
-  //   })
-  // })
+  describe('when given a sum with a symbol that is not supported', () => {
+    it('raises a syntax error', () => {
+      expect(function() { calculate('1 ~ 1') } ).toThrowError(SyntaxError, 'Input must be a valid mathematical string separated by spaces')
+    })
+  })
 })

@@ -23,6 +23,10 @@ function calculate(sumString) {
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   };
 
+  if(sumString.split(' ')[1] === '~'){
+    throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
+  }
+
   Object.keys(operations).forEach((operand) => {
     if (sumString.includes(operand)) {
       let numbers = separateOnOperand(operand);
