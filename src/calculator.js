@@ -1,15 +1,12 @@
 'use strict'
 
 function calculate(sumString) {
-  let returnArr;
   const operations = {
     '+': (a, b) => a + b,
     '-': (a,b) => a - b,
     '*': (a,b) => a * b,
     '/': (a,b) => a / b,
   }
-
-  let operand = sumString.split(' ')[1];
 
   const hasCorrectSpacing = () => {
     return sumString === sumString.trim() &&
@@ -20,6 +17,8 @@ function calculate(sumString) {
   const hasValidOperand = () => {
     return Object.keys(operations).includes(operand)
   }
+
+  let operand = sumString.split(' ')[1];
 
   if(!(hasCorrectSpacing() && hasValidOperand())) {
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
