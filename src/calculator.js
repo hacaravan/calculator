@@ -1,10 +1,11 @@
 'use strict'
 
 function calculate(sumString) {
-  let numbers, returnArr;
+  let returnArr;
   const operations = {
     '+': (a, b) => a + b,
-    '-': (a,b) => a - b
+    '-': (a,b) => a - b,
+    '*': (a,b) => a * b,
   }
 
   const separateOnOperand = (operand) => {
@@ -13,11 +14,10 @@ function calculate(sumString) {
 
   Object.keys(operations).forEach((operand) => {
     if (sumString.includes(operand)) {
-      numbers = separateOnOperand(operand);
+      let numbers = separateOnOperand(operand);
       returnArr = [sumString, operations[operand](numbers[0], numbers[1])]
     };
   });
 
   return returnArr;
-
 }

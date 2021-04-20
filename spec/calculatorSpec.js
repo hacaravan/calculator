@@ -12,4 +12,9 @@ describe('calculate', () => {
       expect(calculate('1 - 1')).toEqual(['1 - 1', 0])
     })
   })
+  describe('when given a simple Multiplication of two numbers', () => {
+    it('returns the sum passed to it and the result of the sum', () => {
+      expect(calculate('2 * 3')).toEqual(['2 * 3', 6])
+    })
+  })
 })
