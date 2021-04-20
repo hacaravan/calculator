@@ -21,14 +21,13 @@ function calculate(sumString) {
            Math.min(...sumString.split(' ').map(a => a.length)) >= 1
   };
 
-  if(!hasCorrectSpacing()) {
+  const hasValidOperand = () => {
+    return Object.keys(operations).includes(operand)
+  }
+
+  if(!(hasCorrectSpacing() && hasValidOperand())) {
     throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
   };
-
-
-  if(!Object.keys(operations).includes(operand)){
-    throw new SyntaxError('Input must be a valid mathematical string separated by spaces')
-  }
 
   Object.keys(operations).forEach((operand) => {
     if (sumString.includes(operand)) {
