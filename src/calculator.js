@@ -6,6 +6,7 @@ function calculate(sumString) {
     '+': (a, b) => a + b,
     '-': (a,b) => a - b,
     '*': (a,b) => a * b,
+    '/': (a,b) => a / b
   }
 
   const separateOnOperand = (operand) => {

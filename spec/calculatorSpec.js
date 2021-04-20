@@ -17,4 +17,9 @@ describe('calculate', () => {
       expect(calculate('2 * 3')).toEqual(['2 * 3', 6])
     })
   })
+  describe('when given a simple division of two divisible numbers', () => {
+    it('returns the sum passed to it and the result of the sum', () => {
+      expect(calculate('6 / 3')).toEqual(['6 / 3', 2])
+    })
+  })
 })
