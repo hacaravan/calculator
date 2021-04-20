@@ -22,7 +22,8 @@ Input/Output table
 --------
 Scenario | Input | Output
 -------------| ----| --------
-Addition | '1 + 1' | ['1+1', 2]
+Addition | '1 + 1' | ['1 + 1', 2]
+Addition | '2 + 3' | ['2 + 3', 5]
 Subtraction | '1 - 1' | ['1 - 1', 2]
 Multiplication | '2 * 3' | ['2 * 3', 6]
 Division | '6 / 3' | ['6 / 3', 2]
